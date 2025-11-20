@@ -1,0 +1,89 @@
+animations:
+  type: page
+  structure:
+    - x x x x x x x x x
+    - x i i i i i i i x
+    - x i i i i i i i x
+    - x x l x c x r x x
+  items:
+    owned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: FEATHER
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+    notowned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: REDSTONE
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Musst du noch kaufen","color":"gray"}'
+
+# Reserved or special behaviour:
+# i = items filled dynamically
+# c = Closes on click
+# u = Scroll up button (only works in scroll invs)
+# d = Scroll down button (only works in scroll invs)
+# l = Left page button (only works in paged invs)
+# r = Right page button (only works in paged invs)
+slots:
+  x:
+    ==: org.bukkit.inventory.ItemStack
+    v: 4189
+    type: BLACK_STAINED_GLASS_PANE
+  c:
+    ==: org.bukkit.inventory.ItemStack
+    v: 4189
+    type: RED_STAINED_GLASS_PANE
+    meta:
+      ==: ItemMeta
+      meta-type: UNSPECIFIC
+      display-name: '{"text":"Schließen","italic":false,"color":"red"}'
+  u:
+    ==: org.bukkit.inventory.ItemStack
+    v: 4189
+    type: WHITE_STAINED_GLASS_PANE
+    meta:
+      ==: ItemMeta
+      meta-type: UNSPECIFIC
+      display-name: '{"text":"▲","bold":true,"color":"yellow"}'
+      lore:
+        - '{"text":"Du kannst nicht weiter nach oben scrollen","color":"gray"}'
+  d:
+    ==: org.bukkit.inventory.ItemStack
+    v: 4189
+    type: WHITE_STAINED_GLASS_PANE
+    meta:
+      ==: ItemMeta
+      meta-type: UNSPECIFIC
+      display-name: '{"text":"▼","bold":true,"color":"yellow"}'
+      lore:
+        - '{"text":"Du kannst nicht weiter nach links","color":"gray"}'
+  l:
+    ==: org.bukkit.inventory.ItemStack
+    v: 4189
+    type: WHITE_STAINED_GLASS_PANE
+    meta:
+      ==: ItemMeta
+      meta-type: UNSPECIFIC
+      display-name: '{"text":"<","bold":true,"color":"yellow"}'
+      lore:
+        - '{"text":"Du kannst nicht weiter nach oben scrollen","color":"gray"}'
+  r:
+    ==: org.bukkit.inventory.ItemStack
+    v: 4189
+    type: WHITE_STAINED_GLASS_PANE
+    meta:
+      ==: ItemMeta
+      meta-type: UNSPECIFIC
+      display-name: '{"text":">","bold":true,"color":"yellow"}'
+      lore:
+        - '{"text":"Du kannst nicht weiter nach rechts","color":"gray"}'

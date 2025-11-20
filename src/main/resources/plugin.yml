@@ -1,0 +1,13 @@
+name: PhoenixAnimations
+version: '1.0'
+main: com.bocktom.phoenixAnimations.PhoenixAnimations
+api-version: '1.21'
+commands:
+  animation:
+    description: Play a custom animation
+    usage: /animation or /animation <name>
+    permission: phoenixanimations.animation
+permissions:
+  phoenixanimations.animation:
+    description: Allows the player to use the /animation command
+    default: true
