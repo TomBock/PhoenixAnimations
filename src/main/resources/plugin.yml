@@ -11,3 +11,5 @@ permissions:
   phoenixanimations.animation:
     description: Allows the player to use the /animation command
     default: true
+depends:
+  - BetterModel
