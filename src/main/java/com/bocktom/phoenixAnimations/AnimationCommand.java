@@ -1,12 +1,18 @@
 package com.bocktom.phoenixAnimations;
 
 import com.bocktom.phoenixAnimations.config.Config;
+import com.bocktom.phoenixAnimations.config.MSG;
+import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
+import net.luckperms.api.LuckPerms;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -16,7 +22,6 @@ public class AnimationCommand implements CommandExecutor, TabCompleter {
 
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		if (sender instanceof Player player) {
-
 			if(args.length == 0) {
 				new AnimationInventory(player, player.getUniqueId());
 				return true;
@@ -50,13 +55,52 @@ public class AnimationCommand implements CommandExecutor, TabCompleter {
 					return true;
 				}
 
-				LuckPermsHelper.grantPermission(target, permission);
-				return true;
+				if(LuckPermsHelper.hasPermission(target, permission)) {
+					return true;
+				}
+
+				return attemptPurchase(args[2], target, permission);
 			}
 		}
 
 		sender.sendMessage("§cInkorrekte Nutzung! /animation");
 
+		return true;
+	}
+
+	private static boolean attemptPurchase(String animationName, Player target, String permission) {
+		boolean hasGutschein = false;
+		ItemStack gutschein = null;
+		for (ItemStack item : target.getInventory()) {
+
+			// Check for nametag with custom model data 26
+			if(item != null
+					&& item.getType() == Material.NAME_TAG
+					&& item.getItemMeta() != null
+					&& item.getItemMeta().lore() != null
+					&& item.getItemMeta().getCustomModelDataComponent().getFloats().contains(26f)) {
+
+				PlainTextComponentSerializer plain = PlainTextComponentSerializer.plainText();
+
+				// Check if the nametag lore contains the target player's name
+				if(item.getItemMeta().lore().stream()
+						.map(plain::serialize)
+						.anyMatch(line -> line.contains(target.getName()))) {
+					hasGutschein = true;
+					gutschein = item.clone();
+					gutschein.setAmount(1);
+					break;
+				}
+			}
+		}
+
+		if(hasGutschein) {
+			target.getInventory().removeItem(gutschein);
+			LuckPermsHelper.grantPermission(target, permission);
+			target.sendMessage(MSG.get("purchase_success").replace("%name%", animationName));
+		} else {
+			target.sendMessage(MSG.get("purchase_no_voucher"));
+		}
 		return true;
 	}
 

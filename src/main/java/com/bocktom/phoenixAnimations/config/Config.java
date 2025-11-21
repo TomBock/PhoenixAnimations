@@ -12,6 +12,7 @@ import java.nio.file.Files;
 public class Config {
 
 	public static InternalConfig gui;
+	public static InternalConfig msg;
 	public static InternalConfig animations;
 
 	private JavaPlugin plugin;
@@ -28,6 +29,7 @@ public class Config {
 		}
 
 		gui = new InternalConfig(plugin, "gui.yml");
+		msg = new InternalConfig(plugin, "msg.yml");
 		animations = new InternalConfig(plugin, "animations.yml");
 	}
 
