@@ -6,7 +6,7 @@
 
     <groupId>com.bocktom</groupId>
     <artifactId>PhoenixAnimations</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <packaging>jar</packaging>
 
     <name>PhoenixAnimations</name>
@@ -88,6 +88,12 @@
             <id>xenondevs</id>
             <url>https://repo.xenondevs.xyz/releases</url>
         </repository>
+
+        <!-- Placeholder API -->
+        <repository>
+            <id>placeholderapi</id>
+            <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -101,6 +107,22 @@
             <groupId>io.github.toxicity188</groupId>
             <artifactId>bettermodel</artifactId>
             <version>1.14.2</version>
+        </dependency>
+
+        <!-- Placeholder API -->
+        <dependency>
+            <groupId>me.clip</groupId>
+            <artifactId>placeholderapi</artifactId>
+            <version>2.11.6</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- LuckPerms -->
+        <dependency>
+            <groupId>net.luckperms</groupId>
+            <artifactId>api</artifactId>
+            <version>5.5</version>
+            <scope>provided</scope>
         </dependency>
 
         <!-- Inventory GUI -->

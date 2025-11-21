@@ -15,5 +15,11 @@ public final class PhoenixAnimations extends JavaPlugin {
 
 		getCommand("animation").setExecutor(new AnimationCommand());
 
+		new AnimationPlaceholderExpansion().register();
+
+		if(!LuckPermsHelper.setup()) {
+			getServer().getPluginManager().disablePlugin(this);
+		}
 	}
+
 }

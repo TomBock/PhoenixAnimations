@@ -1,5 +1,5 @@
 name: PhoenixAnimations
-version: '1.0'
+version: '1.1'
 main: com.bocktom.phoenixAnimations.PhoenixAnimations
 api-version: '1.21'
 commands:
@@ -11,5 +11,9 @@ permissions:
   phoenixanimations.animation:
     description: Allows the player to use the /animation command
     default: true
+  phoenixanimations.purchase:
+    description: Allows the player to purchase animations
+    default: op
 depends:
   - BetterModel
+  - LuckPerms

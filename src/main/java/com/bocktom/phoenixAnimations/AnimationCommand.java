@@ -1,6 +1,7 @@
 package com.bocktom.phoenixAnimations;
 
 import com.bocktom.phoenixAnimations.config.Config;
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -13,34 +14,46 @@ import java.util.List;
 
 public class AnimationCommand implements CommandExecutor, TabCompleter {
 
-
-
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-		if (!(sender instanceof Player player)) {
-			sender.sendMessage("Dieser Befehl kann nur von Spielern ausgeführt werden.");
-			return true;
-		}
+		if (sender instanceof Player player) {
 
-		if(args.length == 0) {
-			new AnimationInventory(player, player.getUniqueId());
-			return true;
-		}
-
-		if(args.length == 1) {
-			List<String> available = Config.animations.get.getStringList("animations");
-			if(!available.contains(args[0])) {
-				sender.sendMessage("§cDiese Animation existiert nicht: " + args[0]);
-				return true;
-			}
-			if(!player.hasPermission("phoenixanimations." + args[0])) {
-				sender.sendMessage("§cDu besitzt diese Animation nicht: " + args[0]);
+			if(args.length == 0) {
+				new AnimationInventory(player, player.getUniqueId());
 				return true;
 			}
 
-			BetterModelHelper.playAnimation(player, args[0]);
-			return true;
+			if(args.length == 1) {
+				List<String> available = Config.animations.get.getStringList("animations");
+				if(!available.contains(args[0])) {
+					sender.sendMessage("§cDiese Animation existiert nicht: " + args[0]);
+					return true;
+				}
+				String permission = "phoenixanimations." + args[0];
+				if(!LuckPermsHelper.hasPermission(player, permission)) {
+					sender.sendMessage("§cDu besitzt diese Animation nicht: " + args[0]);
+					return true;
+				}
+
+				BetterModelHelper.playAnimation(player, args[0]);
+				return true;
+			}
 		}
 
+		if(args.length == 3) {
+			if(args[0].equalsIgnoreCase("purchase") && sender.hasPermission("phoenixanimations.purchase")) {
+				String targetName = args[1];
+				String permission = "phoenixanimations." + args[2];
+
+				Player target = Bukkit.getPlayer(targetName);
+				if(target == null) {
+					sender.sendMessage("§cDer Spieler ist nicht online: " + targetName);
+					return true;
+				}
+
+				LuckPermsHelper.grantPermission(target, permission);
+				return true;
+			}
+		}
 
 		sender.sendMessage("§cInkorrekte Nutzung! /animation");
 
