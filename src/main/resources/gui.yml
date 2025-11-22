@@ -6,16 +6,6 @@ animations:
     - x i i i i i i i x
     - x x l x c x r x x
   items:
-    owned:
-      ==: org.bukkit.inventory.ItemStack
-      v: 4189
-      type: FEATHER
-      meta:
-        ==: ItemMeta
-        meta-type: UNSPECIFIC
-        display-name: '{"text":"%name%","italic":false,"color":"red"}'
-        lore:
-          - '{"text":"Bereits gekauft","color":"gray"}'
     notowned:
       ==: org.bukkit.inventory.ItemStack
       v: 4189

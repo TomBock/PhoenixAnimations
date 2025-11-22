@@ -1,25 +1,465 @@
 # Namen entsprechen der Animation
 # Permission ist phoenixanimations.<Name der Animation>
 animations:
-  - Rolle
-  - Nein
-  - Miregal
-  - Ja
-  - Traurig
-  - Winken
-  - Klatschen
-  - Tanz1
-  - Tanz2
-  - Tanz3
-  - Schuechtern
-  - Siegerpose
-  - Dab
-  - Verbeugen
-  - Kichern
-  - Rammeln
-  - Umarmen
-  - Verwirrt
-  - Kuss
-  - Uwu
-  - Folgmir
-  - Tod
+  Rolle:
+    owned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: FEATHER
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+    notowned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: REDSTONE
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+  Nein:
+    owned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: FEATHER
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+    notowned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: REDSTONE
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+  Miregal:
+    owned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: FEATHER
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+    notowned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: REDSTONE
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+  Ja:
+    owned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: FEATHER
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+    notowned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: REDSTONE
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+  Traurig:
+    owned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: FEATHER
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+    notowned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: REDSTONE
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+  Winken:
+    owned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: FEATHER
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+    notowned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: REDSTONE
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+  Klatschen:
+    owned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: FEATHER
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+    notowned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: REDSTONE
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+  Tanz1:
+    owned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: FEATHER
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+    notowned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: REDSTONE
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+  Tanz2:
+    owned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: FEATHER
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+    notowned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: REDSTONE
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+  Tanz3:
+    owned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: FEATHER
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+    notowned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: REDSTONE
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+  Schuechtern:
+    owned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: FEATHER
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+    notowned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: REDSTONE
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+  Siegerpose:
+    owned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: FEATHER
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+    notowned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: REDSTONE
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+  Dab:
+    owned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: FEATHER
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+    notowned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: REDSTONE
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+  Verbeugen:
+    owned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: FEATHER
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+    notowned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: REDSTONE
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+  Kichern:
+    owned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: FEATHER
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+    notowned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: REDSTONE
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+  Rammeln:
+    owned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: FEATHER
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+    notowned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: REDSTONE
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+  Umarmen:
+    owned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: FEATHER
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+    notowned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: REDSTONE
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+  Verwirrt:
+    owned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: FEATHER
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+    notowned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: REDSTONE
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+  Kuss:
+    owned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: FEATHER
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+    notowned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: REDSTONE
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+  Uwu:
+    owned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: FEATHER
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+    notowned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: REDSTONE
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+  Folgmir:
+    owned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: FEATHER
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+    notowned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: REDSTONE
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+  Tod:
+    owned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: FEATHER
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'
+    notowned:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: REDSTONE
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: '{"text":"%name%","italic":false,"color":"red"}'
+        lore:
+          - '{"text":"Bereits gekauft","color":"gray"}'

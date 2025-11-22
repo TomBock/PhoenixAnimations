@@ -3,7 +3,6 @@ package com.bocktom.phoenixAnimations;
 import com.bocktom.phoenixAnimations.config.Config;
 import com.bocktom.phoenixAnimations.config.MSG;
 import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
-import net.luckperms.api.LuckPerms;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -12,11 +11,11 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.Set;
 
 public class AnimationCommand implements CommandExecutor, TabCompleter {
 
@@ -28,7 +27,7 @@ public class AnimationCommand implements CommandExecutor, TabCompleter {
 			}
 
 			if(args.length == 1) {
-				List<String> available = Config.animations.get.getStringList("animations");
+				Set<String> available = Config.animations.get.getConfigurationSection("animations").getKeys(false);
 				if(!available.contains(args[0])) {
 					sender.sendMessage("§cDiese Animation existiert nicht: " + args[0]);
 					return true;
@@ -112,7 +111,7 @@ public class AnimationCommand implements CommandExecutor, TabCompleter {
 		}
 
 		if(args.length == 1) {
-			List<String> available = Config.animations.get.getStringList("animations");
+			Set<String> available = Config.animations.get.getConfigurationSection("animations").getKeys(false);
 			return available.stream()
 					.filter(name -> player.hasPermission("phoenixanimations." + name))
 					.toList();

@@ -15,9 +15,6 @@ import java.util.UUID;
 
 public class AnimationInventory extends ConfigInventory {
 
-	private static ItemStack ownedItemStack;
-	private static ItemStack notOwnedItemStack;
-
 	public AnimationInventory(Player player, UUID owner) {
 		super(player, owner, "animations", "§8Animationen");
 	}
@@ -27,7 +24,7 @@ public class AnimationInventory extends ConfigInventory {
 		List<String> owned = new ArrayList<>();
 		List<String> notowned = new ArrayList<>();
 
-		Config.animations.get.getStringList("animations").forEach(name -> {
+		Config.animations.get.getConfigurationSection("animations").getKeys(false).forEach(name -> {
 
 			if(player.hasPermission("phoenixanimations." + name)) {
 				owned.add(name);
@@ -46,7 +43,7 @@ public class AnimationInventory extends ConfigInventory {
 	}
 
 	private Item createAnimationItem(String name, boolean isOwned) {
-		ItemStack item = isOwned ? getOwnedItemStack() : getNotOwnedItemStack();
+		ItemStack item = isOwned ? getOwnedItemStack(name) : getNotOwnedItemStack(name);
 
 		Component displayName = item.getItemMeta().displayName().replaceText(TextReplacementConfig.builder()
 				.matchLiteral("%name%").replacement(name).build());
@@ -56,17 +53,21 @@ public class AnimationInventory extends ConfigInventory {
 		return new AnimationItem(name, item, isOwned);
 	}
 
-	private ItemStack getOwnedItemStack() {
-		if(ownedItemStack == null) {
-			ownedItemStack = Config.gui.get.getItemStack("animations.items.owned");
+	private ItemStack getOwnedItemStack(String name) {
+		ItemStack itemStack = Config.animations.get.getItemStack("animations." + name + ".owned");
+		if(itemStack == null) {
+			PhoenixAnimations.plugin.getLogger().warning("Could not find owned item stack for animation: " + name);
+			return new ItemStack(org.bukkit.Material.BARRIER);
 		}
-		return ownedItemStack.clone();
+		return itemStack.clone();
 	}
 
-	private ItemStack getNotOwnedItemStack() {
-		if(notOwnedItemStack == null) {
-			notOwnedItemStack = Config.gui.get.getItemStack("animations.items.notowned");
+	private ItemStack getNotOwnedItemStack(String name) {
+		ItemStack itemStack = Config.animations.get.getItemStack("animations." + name + ".notowned");
+		if(itemStack == null) {
+			PhoenixAnimations.plugin.getLogger().warning("Could not find notowned item stack for animation: " + name);
+			return new ItemStack(org.bukkit.Material.BARRIER);
 		}
-		return notOwnedItemStack.clone();
+		return itemStack.clone();
 	}
 }
